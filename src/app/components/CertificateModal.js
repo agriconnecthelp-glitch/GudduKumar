@@ -4,302 +4,151 @@ import { useState, useEffect, useCallback } from 'react';
 import ScrollReveal from './ScrollReveal';
 
 const CERTIFICATES = [
-  {
-    id: 1,
-    image: '/certificates/cert1.jpeg',
-    title: 'Robotics Classes Certificate',
-    description: 'Completed specialized Robotics training in Grade 9, focusing on mechanical assembly and basic programming concepts.',
-    offset: '10%' // Horizontal offset for "constellation" look
-  },
-  {
-    id: 2,
-    image: '/certificates/cert2.jpeg',
-    title: 'AgriConnect – Gardening Community App',
-    description: 'AgriConnect connects urban gardeners to exchange items for free. 🏆 Achievement: Secured 100K+ funding from the Haryana Government.',
-    offset: '-15%'
-  },
-  {
-    id: 3,
-    image: '/certificates/cert3.jpeg',
-    title: 'Smart Garbage Segregation Bin',
-    description: 'Built a smart garbage bin that automatically segregates plastic, metal, and biodegradable waste. 🏆 1st Place at Block Level.',
-    offset: '12%'
-  },
-  {
-    id: 4,
-    image: '/certificates/cert4.jpeg',
-    title: "Children's Safety Smart Shoe",
-    description: 'Designed a GPS-enabled smart safety shoe with emergency buttons and live location sharing.',
-    offset: '-8%'
-  },
-  {
-    id: 5,
-    image: '/certificates/cert5.jpeg',
-    title: 'Smart Home Automation',
-    description: 'Developed an IoT-based home automation system enabling remote control for improved energy efficiency.',
-    offset: '15%'
-  },
-  {
-    id: 6,
-    image: '/certificates/cert6.jpeg',
-    title: 'Smart Home Security & Automation System',
-    description: 'Presented at State Level. Features include theft detection, gas leak alerts, and remote appliance control.',
-    offset: '-5%'
-  }
+  { id: 1, year: '2022', image: '/certificates/cert1.jpeg', title: 'Robotics Classes Certificate', description: 'Completed specialized Robotics training in Grade 9, focusing on mechanical assembly and basic programming concepts.' },
+  { id: 2, year: '2026', image: '/certificates/cert2.jpeg', title: 'AgriConnect – Govt Funded', description: 'AgriConnect connects urban gardeners. 🏆 Achievement: Secured ₹100,000+ funding from the Haryana Government.' },
+  { id: 3, year: '2025', image: '/certificates/cert3.jpeg', title: 'Smart Garbage Segregation', description: 'Built a smart garbage bin that automatically segregates plastic, metal, and biodegradable waste. 🏆 1st Place at Block Level.' },
+  { id: 4, year: '2024', image: '/certificates/cert4.jpeg', title: "Children's Safety Shoe", description: 'Designed a GPS-enabled smart safety shoe with emergency buttons and live location sharing.' },
+  { id: 5, year: '2023', image: '/certificates/cert5.jpeg', title: 'Smart Home Automation', description: 'Developed an IoT-based home automation system enabling remote control for improved energy efficiency.' },
+  { id: 6, year: '2023', image: '/certificates/cert6.jpeg', title: 'State Level Innovation', description: 'Presented at State Level. Features include theft detection, gas leak alerts, and remote appliance control.' }
 ];
 
 export default function CertificateModal() {
   const [activeId, setActiveId] = useState(null);
-
-  const closeModal = useCallback(() => setActiveId(null), []);
-
-  useEffect(() => {
-    const handleKey = (e) => e.key === 'Escape' && closeModal();
-    window.addEventListener('keydown', handleKey);
-    return () => window.removeEventListener('keydown', handleKey);
-  }, [closeModal]);
-
   const activeCert = CERTIFICATES.find(cert => cert.id === activeId);
+  const closeModal = useCallback(() => setActiveId(null), []);
 
   return (
     <>
-      <div className="constellation-container">
-        {/* Background stars */}
-        <div className="star-field"></div>
-        
-        <div className="projects-wrapper">
-          {CERTIFICATES.map((cert, index) => (
-            <ScrollReveal key={cert.id}>
-              <div 
-                className="constellation-item" 
-                style={{ '--offset': cert.offset, '--delay': `${index * 0.2}s` }}
-              >
-                {/* Connecting Line (Hidden on mobile) */}
-                {index < CERTIFICATES.length - 1 && (
-                  <div className="connector-line"></div>
-                )}
+      <section className="certificates-section">
+        <div className="timeline-container">
+          <div className="center-line"></div>
 
-                <div className="star-node">
-                   <div className="pulse-ring"></div>
-                </div>
+          {CERTIFICATES.map((cert, index) => {
+            const isEven = index % 2 === 0;
+            return (
+              <div key={cert.id} className="timeline-row">
+                <ScrollReveal>
+                  <div className={`timeline-grid ${isEven ? 'layout-left' : 'layout-right'}`}>
+                    
+                    {/* LEFT SIDE: Card if Even, Year if Odd */}
+                    <div className="column-side">
+                      {isEven ? (
+                        <div className="cert-card" onClick={() => setActiveId(cert.id)}>
+                          <div className="image-box"><img src={cert.image} alt={cert.title} /></div>
+                          <div className="card-info">
+                            <h3>{cert.title}</h3>
+                            <p>{cert.description}</p>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="year-tag right-align">{cert.year}</div>
+                      )}
+                    </div>
 
-                <div
-                  className="project-card"
-                  onClick={() => setActiveId(cert.id)}
-                >
-                  <div className="project-image">
-                    <img src={cert.image} alt={cert.title} />
+                    {/* CENTER: Node */}
+                    <div className="column-center">
+                      <div className="star-node"><div className="pulse-ring"></div></div>
+                    </div>
+
+                    {/* RIGHT SIDE: Year if Even, Card if Odd */}
+                    <div className="column-side">
+                      {!isEven ? (
+                        <div className="cert-card" onClick={() => setActiveId(cert.id)}>
+                          <div className="image-box"><img src={cert.image} alt={cert.title} /></div>
+                          <div className="card-info">
+                            <h3>{cert.title}</h3>
+                            <p>{cert.description}</p>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="year-tag left-align">{cert.year}</div>
+                      )}
+                    </div>
+
                   </div>
-                  <div className="project-content">
-                    <h3>{cert.title}</h3>
-                    <p>{cert.description}</p>
-                  </div>
-                </div>
+                </ScrollReveal>
               </div>
-            </ScrollReveal>
-          ))}
+            );
+          })}
         </div>
-      </div>
 
-      {/* Modal logic remains same */}
-      {activeCert && (
-        <div className="project-modal-overlay" onClick={() => setActiveId(null)}>
-          <div className="project-modal" onClick={(e) => e.stopPropagation()}>
-            <button className="close-btn" onClick={() => setActiveId(null)}>✕</button>
-            <h3>{activeCert.title}</h3>
-            <div className="gallery-grid">
-              <img src={activeCert.image} alt={activeCert.title} className="modal-image" />
+        {/* MODAL */}
+        {activeCert && (
+          <div className="modal-overlay" onClick={closeModal}>
+            <div className="modal-box" onClick={e => e.stopPropagation()}>
+              <button className="close-btn" onClick={closeModal}>✕</button>
+              <h3 className="modal-title">{activeCert.title} ({activeCert.year})</h3>
+              <div className="modal-body">
+                <img src={activeCert.image} alt={activeCert.title} />
+                <p className="modal-desc">{activeCert.description}</p>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </section>
 
       <style jsx>{`
-        .constellation-container {
-          position: relative;
-          padding: 80px 20px;
-          background: #020617; /* Deep space color */
-          overflow: hidden;
+        .certificates-section { padding: 80px 20px; position: relative; }
+        .timeline-container { max-width: 1100px; margin: 0 auto; position: relative; }
+        
+        .center-line {
+          position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
+          background: linear-gradient(to bottom, transparent, #6366f1, #a855f7, transparent);
+          transform: translateX(-50%); z-index: 0;
         }
 
-        /* Twinkling star background */
-        .star-field {
-          position: absolute;
-          inset: 0;
-          background-image: 
-            radial-gradient(1px 1px at 20px 30px, #eee, rgba(0,0,0,0)),
-            radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
-            radial-gradient(1.5px 1.5px at 90px 40px, #fff, rgba(0,0,0,0));
-          background-size: 200px 200px;
-          opacity: 0.3;
-        }
-
-        .projects-wrapper {
-          max-width: 1000px;
-          margin: 0 auto;
-          display: flex;
-          flex-direction: column;
-          gap: 120px;
-          position: relative;
-        }
-
-        .constellation-item {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          position: relative;
-          transform: translateX(var(--offset));
-          transition: transform 0.5s ease;
-        }
-
-        /* The Star Node */
+        .timeline-row { position: relative; margin-bottom: 80px; z-index: 1; }
+        .timeline-grid { display: grid; grid-template-columns: 1fr 80px 1fr; align-items: center; }
+        
+        /* Node & Pulse */
+        .column-center { display: flex; justify-content: center; }
         .star-node {
-          width: 12px;
-          height: 12px;
-          background: #6c7cff;
-          border-radius: 50%;
-          box-shadow: 0 0 15px #6c7cff, 0 0 30px #6c7cff;
-          margin-bottom: 2rem;
-          position: relative;
-          z-index: 10;
+          width: 16px; height: 16px; background: #818cf8; border-radius: 50%;
+          box-shadow: 0 0 20px #6366f1; position: relative;
         }
-
         .pulse-ring {
-          position: absolute;
-          inset: -10px;
-          border: 2px solid #6c7cff;
-          border-radius: 50%;
-          animation: pulse 2s infinite;
-          opacity: 0;
+          position: absolute; inset: -8px; border: 2px solid #6366f1;
+          border-radius: 50%; animation: pulse 2s infinite;
         }
+        @keyframes pulse { 0% { transform: scale(0.6); opacity: 0.8; } 100% { transform: scale(2); opacity: 0; } }
 
-        @keyframes pulse {
-          0% { transform: scale(0.5); opacity: 0.8; }
-          100% { transform: scale(2); opacity: 0; }
+        /* Year Tag Styling */
+        .year-tag {
+          font-size: 2.5rem; font-weight: 900; color: rgba(255, 255, 255, 0.07);
+          font-family: 'Space Grotesk', sans-serif; transition: 0.3s; user-select: none;
         }
+        .timeline-row:hover .year-tag { color: rgba(99, 102, 241, 0.3); transform: scale(1.1); }
+        .right-align { text-align: right; }
+        .left-align { text-align: left; }
 
-        /* Jagged Connecting Line */
-        .connector-line {
-          position: absolute;
-          top: 12px;
-          left: 50%;
-          width: 2px;
-          height: 180px;
-          background: linear-gradient(to bottom, #6c7cff, transparent);
-          transform: rotate(15deg); /* Angles the connection */
-          transform-origin: top;
-          z-index: 1;
-          opacity: 0.4;
+        /* Card Styling */
+        .cert-card {
+          background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(12px);
+          border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px;
+          overflow: hidden; cursor: pointer; transition: 0.4s ease; width: 100%;
         }
+        .cert-card:hover { border-color: #818cf8; transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
+        .image-box { height: 180px; overflow: hidden; }
+        .image-box img { width: 100%; height: 100%; object-fit: cover; }
+        .card-info { padding: 20px; }
+        .card-info h3 { color: #fff; font-size: 1.1rem; margin-bottom: 5px; }
+        .card-info p { color: #94a3b8; font-size: 0.85rem; line-height: 1.4; }
 
-        /* Hovering Card Effect */
-        .project-card {
-          background: rgba(15, 23, 42, 0.6);
-          backdrop-filter: blur(12px);
-          border: 1px solid rgba(108, 124, 255, 0.2);
-          border-radius: 24px;
-          width: 100%;
-          max-width: 400px;
-          cursor: pointer;
-          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-          animation: float 6s ease-in-out infinite;
-          animation-delay: var(--delay);
-        }
+        /* Modal */
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 2000; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(10px); }
+        .modal-box { background: #0f172a; width: 90%; max-width: 650px; padding: 30px; border-radius: 24px; border: 1px solid #334155; position: relative; }
+        .modal-title { color: #fff; margin-bottom: 15px; }
+        .modal-body img { width: 100%; border-radius: 12px; margin-bottom: 15px; }
+        .modal-desc { color: #cbd5e1; font-size: 1rem; }
+        .close-btn { position: absolute; top: 15px; right: 15px; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
 
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-        }
-
-        .project-card:hover {
-          transform: scale(1.05) translateY(-10px) !important;
-          border-color: #6c7cff;
-          box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(108, 124, 255, 0.2);
-        }
-
-        .project-image {
-          height: 180px;
-          border-radius: 24px 24px 0 0;
-          overflow: hidden;
-        }
-
-        .project-image img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.5s ease;
-        }
-
-        .project-card:hover .project-image img {
-          transform: scale(1.1);
-        }
-
-        .project-content {
-          padding: 24px;
-        }
-
-        .project-content h3 {
-          color: #fff;
-          margin-bottom: 8px;
-          font-size: 1.2rem;
-        }
-
-        .project-content p {
-          color: #94a3b8;
-          font-size: 0.9rem;
-          line-height: 1.5;
-        }
-
-        /* Modal Styles */
-        .project-modal-overlay {
-          position: fixed;
-          inset: 0;
-          background: rgba(2, 6, 23, 0.9);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 1000;
-          backdrop-filter: blur(8px);
-        }
-
-        .project-modal {
-          background: #0f172a;
-          padding: 30px;
-          border-radius: 24px;
-          width: 90%;
-          max-width: 800px;
-          position: relative;
-          border: 1px solid #6c7cff;
-        }
-
-        .modal-image {
-          width: 100%;
-          border-radius: 12px;
-          margin-top: 15px;
-        }
-
-        .close-btn {
-          position: absolute;
-          top: 20px;
-          right: 20px;
-          color: #fff;
-          background: none;
-          border: none;
-          font-size: 1.5rem;
-          cursor: pointer;
-        }
-
-        /* Mobile Adjustments */
         @media (max-width: 768px) {
-          .constellation-item {
-            transform: translateX(0); /* Remove offset on mobile for better fit */
-          }
-          .connector-line {
-            display: none;
-          }
-          .projects-wrapper {
-            gap: 60px;
-          }
+          .center-line { left: 30px; transform: none; }
+          .timeline-grid { grid-template-columns: 60px 1fr; }
+          .column-center { grid-column: 1; }
+          .column-side { grid-column: 2; }
+          .year-tag { font-size: 1.5rem; text-align: left !important; margin-bottom: 10px; }
+          .column-side:has(.year-tag) { order: -1; }
         }
       `}</style>
     </>
