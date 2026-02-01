@@ -40,7 +40,7 @@ export default function Projects() {
       id: 5,
       title: "Home Automation & Security",
       description: "I developed, focusing on multiple layers of protection. It included remote control of home appliances and features like theft protection, gas leak detection, and a rain detector. Each of these safety measures ensured that homeowners could monitor and respond to potential hazards, providing a secure and smart environment for their families. demonstrated at the state level.",
-      image: "/assate/logo2.png",
+      image: "",
       gallery: [],
     },
   ];
