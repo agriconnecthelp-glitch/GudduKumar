@@ -11,21 +11,21 @@ export default function Projects() {
     {
       id: 1,
       title: "AgriConnect App",
-      description: "AgriConnect connects urban gardeners. Our team received ₹1,00,000+ government funding for this innovation.",
+      description: "AgriConnect is an app I designed during my 12th grade, focusing on connecting urban residents for free exchange of gardening items like plants, saplings, seeds, and pots. Users can upload their items and freely exchange within their communities. To generate revenue, the app offers paid services like gardening advice, garden maintenance, and setting up terrace, vertical, or kitchen gardens. Additionally, it integrates with a custom-built smart compost bin that features temperature control, monitoring, and odor-control air circulation—fully monitored via the app. Notably, our project received recognition from the Haryana Government, with a grant of 1 lakh+ for its innovation and impact.",
       image: "/projects/agri/a8.png",
       gallery: ["/projects/agri/a1.jpeg", "/projects/agri/a2.jpeg", "/projects/agri/a3.jpeg", "/projects/agri/a4.jpeg", "/projects/agri/a5.jpeg", "/projects/agri/a6.jpeg", "/projects/agri/a7.jpeg", "/projects/agri/a8.png"],
     },
     {
       id: 2,
       title: "Children’s Safety Smart Shoe",
-      description: "Designed a GPS-enabled smart safety shoe with emergency buttons for instant calls and live location sharing.",
+      description: "One of my core projects was a Children Safety Smart Shoe. I integrated a GPS module into the shoe, along with two emergency buttons. One button triggered an emergency call, instantly notifying parents if the child was in danger. The second button allowed the child to send their live location directly to the parents. Additionally, parents could check the child’s location at any time by sending an SMS from their phone, receiving the child’s current coordinates in response.",
       image: "/projects/ChildrensSafety/s4.jpeg",
       gallery: ["/projects/ChildrensSafety/s0.jpeg", "/projects/ChildrensSafety/s1.jpeg", "/projects/ChildrensSafety/s3.jpeg", "/projects/ChildrensSafety/s4.jpeg", "/projects/ChildrensSafety/s5.jpeg"],
     },
     {
       id: 3,
       title: "Smart Garbage Segregation Bin",
-      description: "Developed a prototype that automatically separates dry and wet waste using sensors for efficient management.",
+      description: "Developed a prototype that automatically separates metal-plastic or biodegradable waste using sensors for efficient management.",
       image: "/projects/bin/s1.png",
       gallery: ["/projects/bin/s1.png", "/projects/bin/s2.jpeg", "/projects/bin/s3.jpeg"],
     },
@@ -39,7 +39,7 @@ export default function Projects() {
     {
       id: 5,
       title: "Home Automation & Security",
-      description: "Comprehensive safety system including theft protection and gas leakage detection, demonstrated at the state level.",
+      description: "I developed, focusing on multiple layers of protection. It included remote control of home appliances and features like theft protection, gas leak detection, and a rain detector. Each of these safety measures ensured that homeowners could monitor and respond to potential hazards, providing a secure and smart environment for their families. demonstrated at the state level.",
       image: "/assate/logo2.png",
       gallery: [],
     },
