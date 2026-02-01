@@ -43,6 +43,22 @@ export default function Projects() {
       image: "",
       gallery: [],
     },
+    {
+      id: 6,
+      title: "Cash Flow APP",
+      description: "CashFlow is an app I created specifically for local shopkeepers struggling with cash management. It tracks both online and offline cash flow, recording every transaction from the main cash drawer. Online transactions are automatically read from SMS and stored securely. Even though it’s offline, it offers robust security. Shopkeepers can review historical data—like earnings from 2-3 years ago—and generate a PDF report with one click. A statistics feature is also planned for future updates.",
+      image: "/projects/cashflow/cash_flow_logo.png",
+      gallery: [
+        "/projects/cashflow/cash_flow_logo.png",
+        "/projects/cashflow/cf1.jpeg",
+        "/projects/cashflow/cf2.jpeg",
+        "/projects/cashflow/cf3.jpeg",
+        "/projects/cashflow/cf4.jpeg",
+        "/projects/cashflow/cf5.jpeg",
+        "/projects/cashflow/cf6.jpeg",
+        "/projects/cashflow/cf7.jpeg",
+      ],
+    },
   ];
 
   return (

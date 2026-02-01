@@ -1303,7 +1303,7 @@ timeline-item.left .timeline-content {
 
 
 
-/* SCROLL REVEAL ANIMATION FOR TIMELINE */
+ 
 .timeline-left.scroll-reveal {
   opacity: 0;
   transform: translateX(-50px);
@@ -1602,7 +1602,7 @@ timeline-item.left .timeline-content {
   transform: translateY(0);
 }
 
-/* SCROLL REVEAL ANIMATION FOR TIMELINE */
+ 
 .timeline-left.scroll-reveal {
   opacity: 0;
   transform: translateX(-50px) translateY(30px);

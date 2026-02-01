@@ -14,16 +14,15 @@ build/
 .env.development.local
 .env.test.local
 .env.production.local
-# Mac
+
 .DS_Store
-# logs
+
 logs
 *.log
 pids
 *.pid
 *.seed
-# public assets generated
-# (kept none ignored so gallery can be tracked)
+
 # static
 *.class
 *.exe
