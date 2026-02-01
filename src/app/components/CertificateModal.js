@@ -30,7 +30,6 @@ export default function CertificateModal() {
                 <ScrollReveal>
                   <div className={`timeline-grid ${isEven ? 'layout-left' : 'layout-right'}`}>
                     
-                    {/* LEFT SIDE: Card if Even, Year if Odd */}
                     <div className="column-side">
                       {isEven ? (
                         <div className="cert-card" onClick={() => setActiveId(cert.id)}>
@@ -45,12 +44,10 @@ export default function CertificateModal() {
                       )}
                     </div>
 
-                    {/* CENTER: Node */}
                     <div className="column-center">
                       <div className="star-node"><div className="pulse-ring"></div></div>
                     </div>
 
-                    {/* RIGHT SIDE: Year if Even, Card if Odd */}
                     <div className="column-side">
                       {!isEven ? (
                         <div className="cert-card" onClick={() => setActiveId(cert.id)}>
@@ -72,7 +69,6 @@ export default function CertificateModal() {
           })}
         </div>
 
-        {/* MODAL */}
         {activeCert && (
           <div className="modal-overlay" onClick={closeModal}>
             <div className="modal-box" onClick={e => e.stopPropagation()}>
@@ -100,7 +96,6 @@ export default function CertificateModal() {
         .timeline-row { position: relative; margin-bottom: 80px; z-index: 1; }
         .timeline-grid { display: grid; grid-template-columns: 1fr 80px 1fr; align-items: center; }
         
-        /* Node & Pulse */
         .column-center { display: flex; justify-content: center; }
         .star-node {
           width: 16px; height: 16px; background: #818cf8; border-radius: 50%;
@@ -112,7 +107,6 @@ export default function CertificateModal() {
         }
         @keyframes pulse { 0% { transform: scale(0.6); opacity: 0.8; } 100% { transform: scale(2); opacity: 0; } }
 
-        /* Year Tag Styling */
         .year-tag {
           font-size: 2.5rem; font-weight: 900; color: rgba(255, 255, 255, 0.07);
           font-family: 'Space Grotesk', sans-serif; transition: 0.3s; user-select: none;
@@ -121,7 +115,6 @@ export default function CertificateModal() {
         .right-align { text-align: right; }
         .left-align { text-align: left; }
 
-        /* Card Styling */
         .cert-card {
           background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(12px);
           border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px;
@@ -134,7 +127,6 @@ export default function CertificateModal() {
         .card-info h3 { color: #fff; font-size: 1.1rem; margin-bottom: 5px; }
         .card-info p { color: #94a3b8; font-size: 0.85rem; line-height: 1.4; }
 
-        /* Modal */
         .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 2000; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(10px); }
         .modal-box { background: #0f172a; width: 90%; max-width: 650px; padding: 30px; border-radius: 24px; border: 1px solid #334155; position: relative; }
         .modal-title { color: #fff; margin-bottom: 15px; }

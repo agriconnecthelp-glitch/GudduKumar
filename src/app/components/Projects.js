@@ -56,7 +56,6 @@ export default function Projects() {
         </div>
 
         <div className="timeline-container">
-          {/* Central Connecting Line */}
           <div className="center-line"></div>
 
           {projects.map((project, index) => {
@@ -66,7 +65,6 @@ export default function Projects() {
                 <ScrollReveal>
                   <div className={`timeline-grid ${isEven ? 'layout-left' : 'layout-right'}`}>
                     
-                    {/* 1. The Card Side */}
                     <div className="card-column">
                       <div 
                         className="project-card"
@@ -83,14 +81,12 @@ export default function Projects() {
                       </div>
                     </div>
 
-                    {/* 2. The Center Node Side */}
                     <div className="node-column">
                       <div className="star-node">
                         <div className="pulse-ring"></div>
                       </div>
                     </div>
 
-                    {/* 3. Empty spacer for the other side */}
                     <div className="spacer-column"></div>
                   </div>
                 </ScrollReveal>
@@ -99,7 +95,6 @@ export default function Projects() {
           })}
         </div>
 
-        {/* --- MODAL GALLERY --- */}
         {activeProject && (
           <div className="modal-overlay" onClick={() => setActiveProject(null)}>
             <div className="modal-box" onClick={e => e.stopPropagation()}>
@@ -114,7 +109,6 @@ export default function Projects() {
           </div>
         )}
 
-        {/* --- FULLSCREEN PREVIEW --- */}
         {previewImage && (
           <div className="preview-overlay" onClick={() => setPreviewImage(null)}>
             <img src={previewImage} alt="Fullscreen" />
@@ -150,7 +144,6 @@ export default function Projects() {
           position: relative;
         }
 
-        /* The vertical line in center */
         .center-line {
           position: absolute;
           left: 50%;
@@ -168,7 +161,6 @@ export default function Projects() {
           z-index: 1;
         }
 
-        /* 3-Column Grid: Card | Node | Empty (or reverse) */
         .timeline-grid {
           display: grid;
           grid-template-columns: 1fr 60px 1fr;
@@ -183,7 +175,6 @@ export default function Projects() {
         .layout-right .node-column { grid-column: 2; }
         .layout-right .spacer-column { grid-column: 1; }
 
-        /* Node Styling */
         .node-column { display: flex; justify-content: center; }
         .star-node {
           width: 16px; height: 16px;
@@ -205,7 +196,6 @@ export default function Projects() {
           100% { transform: scale(2); opacity: 0; }
         }
 
-        /* Card Styling */
         .project-card {
           background: rgba(15, 23, 42, 0.7);
           backdrop-filter: blur(12px);
@@ -234,7 +224,6 @@ export default function Projects() {
         .card-info p { color: #94a3b8; font-size: 0.95rem; line-height: 1.6; }
         .view-trigger { display: block; margin-top: 15px; color: #6366f1; font-weight: 600; }
 
-        /* Gallery Modal */
         .modal-overlay {
           position: fixed; inset: 0; background: rgba(0,0,0,0.9);
           z-index: 1000; display: flex; align-items: center; justify-content: center;
@@ -266,7 +255,6 @@ export default function Projects() {
           border: none; color: white; font-size: 1.5rem; cursor: pointer;
         }
 
-        /* Mobile Adjustment */
         @media (max-width: 768px) {
           .center-line { left: 20px; transform: none; }
           .timeline-grid { grid-template-columns: 40px 1fr; gap: 10px; }

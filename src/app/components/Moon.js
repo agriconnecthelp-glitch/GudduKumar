@@ -11,8 +11,6 @@ export default function Moon() {
       const scroll = window.scrollY;
       setScrollY(scroll);
 
-      // Calculate fade out based on scroll position
-      // Assuming hero section is about 800-1000px, start fading at that point
       const fadeStartPoint = 700;
       const fadeEndPoint = 1000;
       

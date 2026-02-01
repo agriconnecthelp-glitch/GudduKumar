@@ -19,14 +19,12 @@ html {
   scroll-padding-top: 80px;
 }
 
-/* Ensure smooth scroll behavior everywhere */
 *,
 *::before,
 *::after {
   scroll-behavior: smooth;
 }
 
-/* MOON ANIMATION */
 .moon-container {
   position: fixed;
   top: 10%;
@@ -124,7 +122,6 @@ html {
   left: 30%;
 }
 
-/* STAR CONSTELLATION */
 .star-constellation {
   position: fixed;
   top: 0;
@@ -151,7 +148,6 @@ html {
   }
 }
 
-/* CERTIFICATE CONSTELLATION */
 .certificate-constellation {
   position: fixed;
   top: 0;
@@ -234,7 +230,6 @@ body::before {
   position: relative;
 }
 
-/* TOP GLOW EFFECT */
 .main-container::before {
   content: '';
   position: fixed;
@@ -266,7 +261,6 @@ body::before {
   }
 }
 
-/* NAVIGATION */
 .navbar {
   position: sticky;
   top: 0;
@@ -364,7 +358,6 @@ body::before {
   width: 100%;
 }
 
-/* Mobile Menu Toggle */
 .mobile-menu-toggle {
   display: none;
   flex-direction: column;
@@ -418,7 +411,6 @@ body::before {
   }
 }
 
-/* HERO SECTION */
 .hero {
   max-width: 1200px;
   margin: 0 auto;
@@ -749,7 +741,6 @@ body::before {
   border-bottom-color: var(--primary-color);
 }
 
-/* ABOUT SECTION */
 .about {
   background: rgba(10, 14, 39, 0.5);
   border-top: 1px solid rgba(99, 102, 241, 0.1);
@@ -895,13 +886,10 @@ body::before {
   transform: translateY(-2px);
 }
 
-/* CONTACT SECTION */
 .contact {
   padding: 4rem 2rem;
   text-align: center;
 }
-
-/* PROJECTS SECTION */
 .projects {
   background: rgba(10, 14, 39, 0.5);
   border-top: 1px solid rgba(99, 102, 241, 0.1);
@@ -973,7 +961,6 @@ body::before {
   z-index: 2;
 }
 
-/* PROJECTS TIMELINE */
 .projects-timeline {
   position: relative;
   max-width: 900px;
@@ -981,7 +968,6 @@ body::before {
   padding: 2rem 0;
 }
 
-/* ===== PROJECT CARD ===== */
 .project-card {
   display: flex;
   flex-direction: column;
@@ -1014,28 +1000,26 @@ body::before {
     0 0 35px rgba(108, 124, 255, 0.35);
 }
 
-/* ===== IMAGE CONTAINER ===== */
 .project-image {
   position: relative;
   width: 100%;
   padding-bottom: 55%;
   background: rgba(0, 0, 0, 0.25);
-  border-radius: 14px;   /* card rounded */
+  border-radius: 14px;   
   overflow: hidden;
   margin-bottom: 1rem;
 }
 
-/* ===== IMAGE (LOGO FIXED) ===== */
 .project-image img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
 
-  object-fit: contain;  /* 🔥 IMPORTANT */
+  object-fit: contain;  
   padding: 14px;
 
-  border-radius: 0;     /* 🔥 NOT ROUND */
+  border-radius: 0;     
   transition: transform 0.35s ease;
 }
 
@@ -1043,7 +1027,6 @@ body::before {
   transform: scale(1.05);
 }
 
-/* ===== CONTENT ===== */
 .project-content {
   padding: 0.4rem 0;
 }
@@ -1061,7 +1044,6 @@ body::before {
   line-height: 1.6;
 }
 
-/* ===== LINK ===== */
 .project-link {
   display: inline-block;
   margin-top: 0.6rem;
@@ -1077,7 +1059,6 @@ body::before {
   transform: translateX(6px);
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .projects-timeline {
     padding: 1.2rem 0;
@@ -1118,7 +1099,6 @@ body::before {
   }
 }
 
-/* CERTIFICATES SECTION */
 .certificates {
   background: rgba(10, 14, 39, 0.5);
   border-top: 1px solid rgba(99, 102, 241, 0.1);
@@ -1208,51 +1188,42 @@ body::before {
   z-index: 2;
 }
 
-/* VERTICAL TIMELINE */
-/* ===== NEW GRID-BASED TIMELINE FIX ===== */
-
 .timeline-item {
   display: grid;
-  grid-template-columns: 1fr 80px 1fr; /* left | center | right */
+  grid-template-columns: 1fr 80px 1fr;
   align-items: center;
   margin-bottom: 6rem;
   position: relative;
 }
 
-/* CENTER DOT PERFECT */
 .timeline-dot {
   position: relative;
   justify-self: center;
 }
 
-/* IMAGE CARD */
 .timeline-card {
   justify-self: center;
   max-width: 260px;
 }
 
-/* TEXT COMMON */
 .timeline-content {
   max-width: 420px;
   color: #ffffff;
   line-height: 1.6;
 }
 
-/* IMAGE LEFT → TEXT RIGHT */
-.timeline-item.left .timeline-content {
+timeline-item.left .timeline-content {
   justify-self: start;
   text-align: left;
   padding-left: 40px;
 }
 
-/* IMAGE RIGHT → TEXT LEFT */
 .timeline-item.right .timeline-content {
   justify-self: end;
   text-align: right;
   padding-right: 40px;
 }
 
-/* MOBILE FIX */
 @media (max-width: 768px) {
   .timeline-item {
     grid-template-columns: 1fr;
@@ -1323,7 +1294,7 @@ body::before {
 
 
 
-/* SCROLL REVEAL ANIMATION FOR TIMELINE */
+ 
 .timeline-left.scroll-reveal {
   opacity: 0;
   transform: translateX(-50px);
@@ -1418,7 +1389,6 @@ body::before {
   }
 }
 
-/* MODAL STYLES */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -1592,7 +1562,7 @@ body::before {
 .certificate-image {
   position: relative;
   width: 100%;
-  padding-bottom: 45%; /* Reduced from 60% to 45% for smaller height */
+  padding-bottom: 45%;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 16px;
@@ -1611,8 +1581,6 @@ body::before {
 .certificate-card:hover .certificate-image img {
   transform: scale(1.05);
 }
-
-/* SCROLL REVEAL ANIMATION */
 .scroll-reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -1624,7 +1592,7 @@ body::before {
   transform: translateY(0);
 }
 
-/* SCROLL REVEAL ANIMATION FOR TIMELINE */
+ 
 .timeline-left.scroll-reveal {
   opacity: 0;
   transform: translateX(-50px) translateY(30px);
@@ -1647,7 +1615,6 @@ body::before {
   transform: translateX(0) translateY(0);
 }
 
-/* CONTACT SECTION */
 
 .contact {
   text-align: center;
@@ -1657,11 +1624,11 @@ body::before {
   margin-top: 1.5rem;
 
   display: flex;
-  justify-content: center;   /* 🔥 CENTER FIX */
+  justify-content: center;
   align-items: center;
 
   gap: 1rem;
-  flex-wrap: wrap;           /* mobile friendly */
+  flex-wrap: wrap;
 }
 
 .contact-link {
@@ -1687,7 +1654,6 @@ body::before {
 }
 
 
-/* FOOTER */
 .footer {
   background: rgba(10, 14, 39, 0.8);
   border-top: 1px solid rgba(99, 102, 241, 0.1);
@@ -1731,7 +1697,6 @@ body::before {
   z-index: 1;
 }
 
-/* RESPONSIVE DESIGN */
 @media (max-width: 1200px) {
   .section-container {
     padding: 0 1.5rem;
@@ -1826,7 +1791,6 @@ body::before {
   }
 }
 
-/* NEON TUBELIGHT */
 .tubelight {
   position: relative;
   width: 100%;
@@ -1996,9 +1960,6 @@ body::before {
     gap: 1.5rem;
   }
 }
-/* ============================= */
-/* CERTIFICATE STRIP (WIREFRAME STYLE) */
-/* ============================= */
 
 .certificate-strip {
   background: transparent;
@@ -2034,7 +1995,7 @@ body::before {
 
 @media (max-width: 768px) {
   .certificate-strip {
-    padding: 2rem 0; /* Reduced from 2.5rem */
+    padding: 2rem 0;
   }
   
   .certificate-strip-inner {
@@ -2051,17 +2012,17 @@ body::before {
   }
 
   .cert-box {
-    flex: 0 0 180px; /* Reduced from 200px */
+    flex: 0 0 180px;
   }
 }
 
 @media (max-width: 480px) {
   .certificate-strip {
-    padding: 1.5rem 0; /* Further reduced */
+    padding: 1.5rem 0;
   }
   
   .cert-box {
-    flex: 0 0 130px; /* Reduced from 150px */
+    flex: 0 0 130px;
   }
 
   .certificate-strip-inner {
@@ -2069,7 +2030,6 @@ body::before {
     padding: 0 0.75rem;
   }
 }
-/* MODAL */
 .project-modal-overlay {
   position: fixed;
   inset: 0;
@@ -2101,7 +2061,6 @@ body::before {
   cursor: pointer;
 }
 
-/* GALLERY GRID */
 .gallery-grid {
   margin-top: 16px;
   display: grid;
@@ -2159,7 +2118,6 @@ body::before {
   object-fit: cover;
   border-radius: 12px;
 }
-/* FULL IMAGE PREVIEW */
 .image-preview-overlay {
   position: fixed;
   inset: 0;
@@ -2178,13 +2136,11 @@ body::before {
   border-radius: 12px;
 }
 
-/* PROJECTS TIMELINE LAYOUT */
 .projects-timeline {
   position: relative;
   padding: 50px 0;
 }
 
-/* The vertical "pathway" for the constellation */
 .projects-timeline::after {
   content: '';
   position: absolute;
@@ -2198,22 +2154,21 @@ body::before {
 
 .timeline-item {
   display: flex;
-  justify-content: flex-start; /* Default for 'left' */
+  justify-content: flex-start;
   width: 100%;
   margin-bottom: 100px;
 }
 
 .timeline-item.right {
-  justify-content: flex-end; /* Push card to the right */
+  justify-content: flex-end;
 }
 
 .project-card {
-  width: 45%; /* Keep space for the zig-zag lines */
+  width: 45%;
   position: relative;
   z-index: 10;
 }
 
-/* Timeline dots for constellation */
 .timeline-dot {
   position: absolute;
   width: 16px;
@@ -2226,7 +2181,6 @@ body::before {
   transform: translateY(-50%);
 }
 
-/* Position dots for left and right items */
 .timeline-item .timeline-dot {
   left: 50%;
   margin-left: -8px;
@@ -2238,7 +2192,6 @@ body::before {
   margin-left: -8px;
 }
 
-/* Mobile responsive for timeline */
 @media screen and (max-width: 768px) {
   .timeline-item {
     flex-direction: column;

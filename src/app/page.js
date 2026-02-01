@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import ScrollReveal from './components/ScrollReveal';
 import CertificateModal from './components/CertificateModal';
 import Projects from './components/Projects';
+import Gallery from './components/Gallery';
 import Moon from './components/Moon';
 import Navigation from './components/Navigation';
 import StarConstellation from './components/StarConstellation';
@@ -11,7 +12,6 @@ import StarConstellation from './components/StarConstellation';
 export default function Home() {
   return (
     <main className="main-container">
-      {/* Background Elements */}
       <div className="bg-gradient-overlay"></div>
       <Moon />
       <StarConstellation />
@@ -60,7 +60,6 @@ export default function Home() {
           -webkit-text-fill-color: transparent;
         }
 
-        /* --- HERO SECTION --- */
         .hero {
           min-height: 100vh;
           display: flex;
@@ -130,7 +129,6 @@ export default function Home() {
           50% { transform: translateY(-20px); }
         }
 
-        /* --- CERTIFICATE MARQUEE --- */
         .certificate-section {
           padding: 80px 0;
           overflow: hidden;
@@ -180,7 +178,6 @@ export default function Home() {
           100% { transform: translateX(-50%); }
         }
 
-        /* --- CONTACT --- */
         .contact-links {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -221,7 +218,6 @@ export default function Home() {
         }
       `}</style>
 
-      {/* HERO SECTION */}
       <section className="hero" id="home">
         <ScrollReveal>
           <div className="hero-content">
@@ -250,7 +246,6 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      {/* ABOUT SECTION */}
       <section className="about" id="about">
         <div className="section-container">
           <ScrollReveal>
@@ -274,11 +269,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CERTIFICATE SECTION (Auto-Scrolling Marquee) */}
       <section className="certificate-section">
         <div className="marquee-container">
           <div className="marquee-content">
-            {/* Using 6 certs as per your reference, duplicated for loop */}
             {[1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6].map((num, i) => (
               <div key={i} className="cert-card">
                 <div className="cert-glass">
@@ -290,10 +283,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROJECTS SECTION (Staggered Timeline) */}
       <Projects />
 
-      {/* CERTIFICATES GALLERY */}
       <section className="certificates" id="certificates">
         <div className="section-container" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: '2.5rem', marginBottom: '20px' }}>Certificates & Achievements</h2>
@@ -301,7 +292,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT SECTION */}
+      <Gallery />
+
       <section className="contact" id="contact">
         <div className="section-container" style={{ textAlign: 'center' }}>
           <ScrollReveal>
