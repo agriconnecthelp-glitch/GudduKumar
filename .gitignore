@@ -23,7 +23,7 @@ pids
 *.pid
 *.seed
 # public assets generated
-public/gallery/
+# (kept none ignored so gallery can be tracked)
 # static
 *.class
 *.exe
