@@ -182,6 +182,7 @@ body {
   position: relative;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  padding-top: 80px;
 }
 
 body::before {
@@ -262,13 +263,14 @@ body::before {
 }
 
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
   background: rgba(15, 23, 42, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(99, 102, 241, 0.1);
   z-index: 100;
   box-shadow: 0 0 30px rgba(255, 99, 136, 0.1);
+  width: 100%;
 }
 
 .nav-content {
