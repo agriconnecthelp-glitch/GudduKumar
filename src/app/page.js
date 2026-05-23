@@ -19,11 +19,11 @@ export default function Home() {
 
       <style jsx global>{`
         :root {
-          --primary: #6366f1;
-          --secondary: #a855f7;
-          --dark-bg: #020617;
+          --primary: #3b82f6;
+          --secondary: #0ea5e9;
+          --dark-bg: #0f172a;
           --glass: rgba(15, 23, 42, 0.6);
-          --glass-border: rgba(255, 255, 255, 0.1);
+          --glass-border: rgba(59, 130, 246, 0.15);
         }
 
         body {
@@ -43,7 +43,7 @@ export default function Home() {
         .bg-gradient-overlay {
           position: fixed;
           top: 0; left: 0; right: 0; bottom: 0;
-          background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, transparent 60%);
+          background: radial-gradient(circle at 50% 0%, #1e3a5f 0%, transparent 60%);
           z-index: -1;
           pointer-events: none;
         }
@@ -55,7 +55,7 @@ export default function Home() {
         }
 
         .gradient-text {
-          background: linear-gradient(to right, #818cf8, #c084fc, #f472b6);
+          background: linear-gradient(to right, #3b82f6, #0ea5e9, #06b6d4);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
@@ -88,7 +88,7 @@ export default function Home() {
 
         .subtitle {
           font-size: 1.5rem;
-          color: #94a3b8;
+          color: #cbd5e1;
           margin-bottom: 20px;
         }
 
@@ -103,15 +103,21 @@ export default function Home() {
           gap: 8px;
         }
 
+        .social-icon {
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+        }
+
         .btn-primary {
           background: linear-gradient(135deg, var(--primary), var(--secondary));
           color: white;
-          box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+          box-shadow: 0 0 20px rgba(59, 130, 246, 0.35);
         }
 
         .btn-secondary {
-          background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          background: rgba(255, 255, 255, 0.08);
+          border: 1px solid rgba(59, 130, 246, 0.3);
           color: white;
           backdrop-filter: blur(10px);
         }
@@ -120,8 +126,9 @@ export default function Home() {
           width: 100%;
           max-width: 450px;
           border-radius: 30px;
-          border: 1px solid var(--glass-border);
+          border: 2px solid var(--primary);
           animation: float 6s ease-in-out infinite;
+          box-shadow: 0 20px 60px rgba(59, 130, 246, 0.25);
         }
 
         @keyframes float {
@@ -132,6 +139,10 @@ export default function Home() {
         .certificate-section {
           padding: 80px 0;
           overflow: hidden;
+          position: relative;
+          background-image: 
+            radial-gradient(circle, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+          background-size: 40px 40px;
         }
 
         .marquee-container {
@@ -153,9 +164,9 @@ export default function Home() {
         .cert-card { flex: 0 0 320px; }
 
         .cert-glass {
-          background: rgba(255, 255, 255, 0.03);
+          background: rgba(59, 130, 246, 0.08);
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(59, 130, 246, 0.2);
           border-radius: 12px;
           padding: 10px;
           transition: 0.4s ease;
@@ -186,22 +197,41 @@ export default function Home() {
         }
 
         .contact-link {
-          background: var(--glass);
+          background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(14, 165, 233, 0.05));
           padding: 20px;
           border-radius: 16px;
           color: white;
           text-decoration: none;
-          border: 1px solid var(--glass-border);
+          border: 1px solid rgba(59, 130, 246, 0.2);
           transition: 0.3s;
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 10px;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .contact-link::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background-image: 
+            linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.2), transparent);
+          transition: left 0.5s ease;
+        }
+
+        .contact-link:hover::before {
+          left: 100%;
         }
 
         .contact-link:hover {
-          border-color: var(--secondary);
+          border-color: var(--primary);
           transform: translateY(-5px);
+          box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
         }
 
         .footer {
@@ -209,6 +239,9 @@ export default function Home() {
           padding: 40px;
           color: #64748b;
           border-top: 1px solid #1e293b;
+          background-image: 
+            linear-gradient(90deg, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
+          background-size: 50px 100%;
         }
 
         @media (max-width: 768px) {
@@ -222,7 +255,7 @@ export default function Home() {
         <ScrollReveal>
           <div className="hero-content">
             <div className="hero-text">
-              <div style={{ color: '#818cf8', fontWeight: 600, letterSpacing: '2px', marginBottom: '10px' }}>
+              <div style={{ color: '#3b82f6', fontWeight: 600, letterSpacing: '2px', marginBottom: '10px' }}>
                 WELCOME TO MY PORTFOLIO
               </div>
               <h1>
@@ -236,7 +269,7 @@ export default function Home() {
               </p>
               <div className="cta-buttons">
                 <a href="mailto:sumitradevi10590gk@gmail.com" className="btn btn-primary">✉️ Get In Touch</a>
-                <a href="https://www.instagram.com/roboticswithansh/" target="_blank" className="btn btn-secondary">📸 Instagram</a>
+                <a href="https://www.instagram.com/roboticswithansh/" target="_blank" className="btn btn-secondary"><img src="/icons/instagram.svg" alt="Instagram" className="social-icon" /> Instagram</a>
               </div>
             </div>
             <div className="hero-image">
@@ -250,19 +283,22 @@ export default function Home() {
         <div className="section-container">
           <ScrollReveal>
             <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '40px' }}>About Me</h2>
-            <div style={{ background: 'var(--glass)', padding: '40px', borderRadius: '24px', border: '1px solid var(--glass-border)', textAlign: 'center' }}>
-              <p style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
-                My name is <strong>Guddu Kumar</strong> (nickname Ansh Thakur). I am 17 years old. 
-                I have completed my 12th grade in the Commerce stream from HBSE (Haryana State Board). 
-                I am passionate about robotics and technology. I enjoy fixing electrical devices and 
-                building digital solutions through code.
-              </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '15px', marginTop: '30px' }}>
-                {['Robotics', 'App Development', 'Website Development', 'Electronics Repair'].map(skill => (
-                  <span key={skill} style={{ background: 'rgba(99, 102, 241, 0.1)', color: '#818cf8', padding: '8px 20px', borderRadius: '20px', border: '1px solid rgba(99, 102, 241, 0.3)' }}>
-                    {skill}
-                  </span>
-                ))}
+            <div style={{ background: 'var(--glass)', padding: '40px', borderRadius: '24px', border: '1px solid var(--glass-border)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'radial-gradient(circle, rgba(59, 130, 246, 0.05) 1px, transparent 1px)', backgroundSize: '30px 30px', pointerEvents: 'none', zIndex: 0 }}></div>
+              <div style={{ position: 'relative', zIndex: 1 }}>
+                <p style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
+                  My name is <strong>Guddu Kumar</strong> (nickname Ansh Thakur). I am 17 years old. 
+                  I have completed my 12th grade in the Commerce stream from HBSE (Haryana State Board). 
+                  I am passionate about robotics and technology. I enjoy fixing electrical devices and 
+                  building digital solutions through code.
+                </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '15px', marginTop: '30px' }}>
+                  {['Robotics', 'App Development', 'Website Development', 'Electronics Repair'].map(skill => (
+                    <span key={skill} style={{ background: 'rgba(59, 130, 246, 0.1)', color: '#3b82f6', padding: '8px 20px', borderRadius: '20px', border: '1px solid rgba(59, 130, 246, 0.3)', fontWeight: 500 }}>
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </ScrollReveal>
@@ -304,9 +340,9 @@ export default function Home() {
                className="btn btn-primary" style={{ padding: '15px 40px', fontSize: '1.2rem' }}>✉️ Email Me</a>
 
             <div className="contact-links">
-              <a href="https://www.instagram.com/roboticswithansh/" target="_blank" className="contact-link">🤖 Instagram (Robotics)</a>
-              <a href="https://www.instagram.com/understand_vibes/" target="_blank" className="contact-link">🎮 Instagram (Gaming)</a>
-              <a href="https://discord.com/users/thakur10590" target="_blank" className="contact-link">💬 Discord: thakur10590</a>
+              <a href="https://www.instagram.com/roboticswithansh/" target="_blank" className="contact-link"><img src="/icons/instagram.svg" alt="Instagram Robotics" className="social-icon" /> Instagram (Robotics)</a>
+              <a href="https://www.instagram.com/understand_vibes/" target="_blank" className="contact-link"><img src="/icons/instagram.svg" alt="Instagram Gaming" className="social-icon" /> Instagram (Gaming)</a>
+              <a href="https://discord.com/users/thakur10590" target="_blank" className="contact-link"><img src="/icons/discord.svg" alt="Discord" className="social-icon" /> Discord: thakur10590</a>
             </div>
           </ScrollReveal>
         </div>
