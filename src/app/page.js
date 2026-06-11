@@ -305,6 +305,96 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="resume" id="resume">
+        <div className="section-container">
+          <ScrollReveal>
+            <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '50px' }}>Resume</h2>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', maxWidth: '1100px', margin: '0 auto' }}>
+              {/* Left Column */}
+              <div>
+                {/* Education */}
+                <div style={{ marginBottom: '40px' }}>
+                  <h3 style={{ fontSize: '1.5rem', color: '#3b82f6', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    🎓 Education
+                  </h3>
+                  <div style={{ background: 'var(--glass)', padding: '20px', borderRadius: '16px', border: '1px solid var(--glass-border)', marginBottom: '15px' }}>
+                    <h4 style={{ margin: '0 0 8px 0', fontSize: '1.1rem' }}>12th Grade - Commerce</h4>
+                    <p style={{ color: '#94a3b8', margin: '0 0 8px 0' }}>HBSE (Haryana State Board)</p>
+                    <p style={{ color: '#64748b', margin: 0, fontSize: '0.9rem' }}>Completed</p>
+                  </div>
+                </div>
+
+                {/* Skills */}
+                <div style={{ marginBottom: '40px' }}>
+                  <h3 style={{ fontSize: '1.5rem', color: '#3b82f6', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    ⚙️ Skills
+                  </h3>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '12px' }}>
+                    {[
+                      { category: 'Robotics', items: ['Arduino Programming', 'Sensor Integration', 'Circuit Design'] },
+                      { category: 'Development', items: ['Mobile App Dev', 'Web Development', 'React/Next.js'] },
+                      { category: 'Electronics', items: ['Device Repair', 'Electrical Troubleshooting', 'Hardware Assembly'] }
+                    ].map((skill, idx) => (
+                      <div key={idx} style={{ background: 'var(--glass)', padding: '15px', borderRadius: '12px', border: '1px solid var(--glass-border)' }}>
+                        <p style={{ margin: '0 0 8px 0', fontWeight: 600, color: '#0ea5e9' }}>{skill.category}</p>
+                        <p style={{ margin: 0, color: '#cbd5e1', fontSize: '0.9rem' }}>{skill.items.join(', ')}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column */}
+              <div>
+                {/* Experience */}
+                <div style={{ marginBottom: '40px' }}>
+                  <h3 style={{ fontSize: '1.5rem', color: '#3b82f6', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    💼 Experience
+                  </h3>
+                  <div style={{ background: 'var(--glass)', padding: '20px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
+                    <h4 style={{ margin: '0 0 8px 0', fontSize: '1.1rem' }}>Tech Enthusiast & Content Creator</h4>
+                    <p style={{ color: '#94a3b8', margin: '0 0 12px 0', fontSize: '0.9rem' }}>Current</p>
+                    <ul style={{ color: '#cbd5e1', margin: '0', paddingLeft: '20px', lineHeight: '1.6' }}>
+                      <li>Creating robotics content on Instagram</li>
+                      <li>Building digital solutions through code</li>
+                      <li>Repairing electrical devices</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Achievements */}
+                <div>
+                  <h3 style={{ fontSize: '1.5rem', color: '#3b82f6', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    🏆 Achievements
+                  </h3>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '12px' }}>
+                    {[
+                      'Multiple robotics projects completed',
+                      'Certificates in various tech domains',
+                      'Active tech community member',
+                      'Content creator with engaged audience'
+                    ].map((achievement, idx) => (
+                      <div key={idx} style={{ background: 'var(--glass)', padding: '12px', borderRadius: '12px', border: '1px solid var(--glass-border)', display: 'flex', gap: '10px', alignItems: 'center' }}>
+                        <span style={{ color: '#3b82f6' }}>✓</span>
+                        <span style={{ color: '#cbd5e1' }}>{achievement}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Download Resume Button */}
+            <div style={{ textAlign: 'center', marginTop: '50px' }}>
+              <a href="mailto:sumitradevi10590gk@gmail.com?subject=Request%20for%20Resume" className="btn btn-primary" style={{ padding: '15px 40px', fontSize: '1.1rem' }}>
+                📄 Request Resume PDF
+              </a>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       <section className="certificate-section">
         <div className="marquee-container">
           <div className="marquee-content">
