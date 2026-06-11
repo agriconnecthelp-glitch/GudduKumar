@@ -308,37 +308,66 @@ export default function Home() {
       <section className="resume" id="resume">
         <div className="section-container">
           <ScrollReveal>
-            <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '50px' }}>Resume</h2>
-            
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', maxWidth: '1100px', margin: '0 auto' }}>
+            {/* Header */}
+            <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+              <h2 style={{ fontSize: '2.5rem', marginBottom: '10px' }}>Resume</h2>
+              <h1 style={{ fontSize: '2rem', color: '#3b82f6', marginBottom: '15px' }}>Guddu Kumar</h1>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap', color: '#94a3b8', fontSize: '0.95rem' }}>
+                <span>📍 Haryana, India</span>
+                <span>📧 guddukumariligal@gmail.com</span>
+              </div>
+            </div>
+
+            {/* Professional Summary */}
+            <div style={{ background: 'var(--glass)', padding: '30px', borderRadius: '20px', border: '1px solid var(--glass-border)', marginBottom: '40px' }}>
+              <h3 style={{ fontSize: '1.4rem', color: '#3b82f6', marginBottom: '15px' }}>💼 Professional Summary</h3>
+              <p style={{ color: '#cbd5e1', lineHeight: '1.8', margin: 0 }}>
+                Dedicated and detail-oriented Billing & Stock Manager with experience in retail operations, inventory management, customer service, and billing processes. Proficient in Microsoft Office tools and business software. Strong organizational skills with an entrepreneurial mindset and experience working in business development and social media marketing.
+              </p>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', maxWidth: '1200px', margin: '0 auto' }}>
               {/* Left Column */}
               <div>
-                {/* Education */}
+                {/* Work Experience */}
                 <div style={{ marginBottom: '40px' }}>
-                  <h3 style={{ fontSize: '1.5rem', color: '#3b82f6', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    🎓 Education
-                  </h3>
-                  <div style={{ background: 'var(--glass)', padding: '20px', borderRadius: '16px', border: '1px solid var(--glass-border)', marginBottom: '15px' }}>
-                    <h4 style={{ margin: '0 0 8px 0', fontSize: '1.1rem' }}>12th Grade - Commerce</h4>
-                    <p style={{ color: '#94a3b8', margin: '0 0 8px 0' }}>HBSE (Haryana State Board)</p>
-                    <p style={{ color: '#64748b', margin: 0, fontSize: '0.9rem' }}>Completed</p>
+                  <h3 style={{ fontSize: '1.4rem', color: '#3b82f6', marginBottom: '20px' }}>💼 Work Experience</h3>
+                  <div style={{ background: 'var(--glass)', padding: '20px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
+                    <h4 style={{ margin: '0 0 5px 0', fontSize: '1.1rem' }}>Billing & Stock Manager</h4>
+                    <p style={{ color: '#0ea5e9', margin: '0 0 12px 0', fontWeight: 500 }}>OZ Basket Shop</p>
+                    <ul style={{ color: '#cbd5e1', margin: '0', paddingLeft: '20px', lineHeight: '1.7', fontSize: '0.9rem' }}>
+                      <li>Manage daily billing operations and cash transactions</li>
+                      <li>Handle inventory tracking and stock management</li>
+                      <li>Monitor product availability and stock replenishment</li>
+                      <li>Generate sales records and maintain reports</li>
+                      <li>Coordinate with suppliers and maintain stock accuracy</li>
+                    </ul>
                   </div>
                 </div>
 
-                {/* Skills */}
+                {/* Education */}
                 <div style={{ marginBottom: '40px' }}>
-                  <h3 style={{ fontSize: '1.5rem', color: '#3b82f6', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    ⚙️ Skills
-                  </h3>
+                  <h3 style={{ fontSize: '1.4rem', color: '#3b82f6', marginBottom: '20px' }}>🎓 Education</h3>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '12px' }}>
-                    {[
-                      { category: 'Robotics', items: ['Arduino Programming', 'Sensor Integration', 'Circuit Design'] },
-                      { category: 'Development', items: ['Mobile App Dev', 'Web Development', 'React/Next.js'] },
-                      { category: 'Electronics', items: ['Device Repair', 'Electrical Troubleshooting', 'Hardware Assembly'] }
-                    ].map((skill, idx) => (
-                      <div key={idx} style={{ background: 'var(--glass)', padding: '15px', borderRadius: '12px', border: '1px solid var(--glass-border)' }}>
-                        <p style={{ margin: '0 0 8px 0', fontWeight: 600, color: '#0ea5e9' }}>{skill.category}</p>
-                        <p style={{ margin: 0, color: '#cbd5e1', fontSize: '0.9rem' }}>{skill.items.join(', ')}</p>
+                    <div style={{ background: 'var(--glass)', padding: '18px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
+                      <h4 style={{ margin: '0 0 8px 0', fontSize: '1rem', fontWeight: 600 }}>Senior Secondary (Commerce)</h4>
+                      <p style={{ color: '#94a3b8', margin: '0 0 5px 0', fontSize: '0.9rem' }}>71% Marks • Haryana Board</p>
+                    </div>
+                    <div style={{ background: 'var(--glass)', padding: '18px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
+                      <h4 style={{ margin: '0 0 8px 0', fontSize: '1rem', fontWeight: 600 }}>BCA (Applied)</h4>
+                      <p style={{ color: '#94a3b8', margin: 0, fontSize: '0.9rem' }}>Kurukshetra University</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Languages */}
+                <div>
+                  <h3 style={{ fontSize: '1.4rem', color: '#3b82f6', marginBottom: '15px' }}>🗣️ Languages</h3>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '10px' }}>
+                    {['Hindi (Native)', 'English (Intermediate)'].map((lang, idx) => (
+                      <div key={idx} style={{ background: 'var(--glass)', padding: '12px 16px', borderRadius: '12px', border: '1px solid var(--glass-border)', color: '#cbd5e1', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <span style={{ color: '#3b82f6' }}>✓</span>
+                        {lang}
                       </div>
                     ))}
                   </div>
@@ -347,37 +376,32 @@ export default function Home() {
 
               {/* Right Column */}
               <div>
-                {/* Experience */}
+                {/* Technical Skills */}
                 <div style={{ marginBottom: '40px' }}>
-                  <h3 style={{ fontSize: '1.5rem', color: '#3b82f6', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    💼 Experience
-                  </h3>
-                  <div style={{ background: 'var(--glass)', padding: '20px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
-                    <h4 style={{ margin: '0 0 8px 0', fontSize: '1.1rem' }}>Tech Enthusiast & Content Creator</h4>
-                    <p style={{ color: '#94a3b8', margin: '0 0 12px 0', fontSize: '0.9rem' }}>Current</p>
-                    <ul style={{ color: '#cbd5e1', margin: '0', paddingLeft: '20px', lineHeight: '1.6' }}>
-                      <li>Creating robotics content on Instagram</li>
-                      <li>Building digital solutions through code</li>
-                      <li>Repairing electrical devices</li>
-                    </ul>
+                  <h3 style={{ fontSize: '1.4rem', color: '#3b82f6', marginBottom: '15px' }}>⚙️ Technical Skills</h3>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '12px' }}>
+                    {[
+                      { title: 'Microsoft Office', items: ['Excel', 'Word', 'PowerPoint', 'Outlook'] },
+                      { title: 'Computer Skills', items: ['Data Entry', 'Inventory Management', 'Billing Software'] },
+                      { title: 'Business Skills', items: ['Stock Management', 'Retail Operations', 'Customer Service'] },
+                      { title: 'Marketing Skills', items: ['Social Media Management', 'Instagram Marketing', 'Reel Editing'] }
+                    ].map((skill, idx) => (
+                      <div key={idx} style={{ background: 'var(--glass)', padding: '14px', borderRadius: '12px', border: '1px solid var(--glass-border)' }}>
+                        <p style={{ margin: '0 0 8px 0', fontWeight: 600, color: '#0ea5e9', fontSize: '0.95rem' }}>{skill.title}</p>
+                        <p style={{ margin: 0, color: '#cbd5e1', fontSize: '0.85rem', lineHeight: '1.5' }}>{skill.items.join(' • ')}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                {/* Achievements */}
+                {/* Strengths */}
                 <div>
-                  <h3 style={{ fontSize: '1.5rem', color: '#3b82f6', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    🏆 Achievements
-                  </h3>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '12px' }}>
-                    {[
-                      'Multiple robotics projects completed',
-                      'Certificates in various tech domains',
-                      'Active tech community member',
-                      'Content creator with engaged audience'
-                    ].map((achievement, idx) => (
-                      <div key={idx} style={{ background: 'var(--glass)', padding: '12px', borderRadius: '12px', border: '1px solid var(--glass-border)', display: 'flex', gap: '10px', alignItems: 'center' }}>
-                        <span style={{ color: '#3b82f6' }}>✓</span>
-                        <span style={{ color: '#cbd5e1' }}>{achievement}</span>
+                  <h3 style={{ fontSize: '1.4rem', color: '#3b82f6', marginBottom: '15px' }}>🌟 Strengths</h3>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '10px' }}>
+                    {['Quick Learner', 'Leadership', 'Problem Solving', 'Communication Skills', 'Time Management', 'Teamwork'].map((strength, idx) => (
+                      <div key={idx} style={{ background: 'var(--glass)', padding: '12px 16px', borderRadius: '12px', border: '1px solid var(--glass-border)', color: '#cbd5e1', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.95rem' }}>
+                        <span style={{ color: '#0ea5e9' }}>→</span>
+                        {strength}
                       </div>
                     ))}
                   </div>
@@ -385,10 +409,29 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Projects */}
+            <div style={{ marginTop: '40px' }}>
+              <h3 style={{ fontSize: '1.4rem', color: '#3b82f6', marginBottom: '20px' }}>🚀 Projects</h3>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                <div style={{ background: 'var(--glass)', padding: '20px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
+                  <h4 style={{ margin: '0 0 12px 0', fontSize: '1.05rem', color: '#0ea5e9' }}>IRIS Smart Glasses Project</h4>
+                  <p style={{ color: '#cbd5e1', margin: 0, fontSize: '0.9rem', lineHeight: '1.6' }}>
+                    AI-powered smart glasses concept for visually impaired users. Designed using Raspberry Pi, camera, microphone, and AI assistant integration.
+                  </p>
+                </div>
+                <div style={{ background: 'var(--glass)', padding: '20px', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
+                  <h4 style={{ margin: '0 0 12px 0', fontSize: '1.05rem', color: '#0ea5e9' }}>Startup & Business Development</h4>
+                  <p style={{ color: '#cbd5e1', margin: 0, fontSize: '0.9rem', lineHeight: '1.6' }}>
+                    Worked with a team to grow a retail-based business. Managed customer engagement and marketing campaigns across Haryana.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* Download Resume Button */}
             <div style={{ textAlign: 'center', marginTop: '50px' }}>
-              <a href="mailto:sumitradevi10590gk@gmail.com?subject=Request%20for%20Resume" className="btn btn-primary" style={{ padding: '15px 40px', fontSize: '1.1rem' }}>
-                📄 Request Resume PDF
+              <a href="mailto:guddukumariligal@gmail.com?subject=Resume%20Request" className="btn btn-primary" style={{ padding: '15px 40px', fontSize: '1.1rem' }}>
+                📄 Download Resume PDF
               </a>
             </div>
           </ScrollReveal>
